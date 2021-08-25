@@ -4,3 +4,10 @@ font-family: "Oswald", "sans-serif"
 body{
     background-color: blanchedalmond;
 }
+
+.hm-gradient {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.darken-grey-text {
+    color: #2E2E2E;
+}
