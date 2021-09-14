@@ -11,3 +11,8 @@ body{
 .darken-grey-text {
     color: #2E2E2E;
 }
+
+.inactiveLink {
+    pointer-events: none;
+    cursor: default;
+ }
