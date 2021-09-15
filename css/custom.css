@@ -16,3 +16,13 @@ body{
     pointer-events: none;
     cursor: default;
  }
+
+ .strokeBlack{
+
+    stroke: black;
+ }
+
+.navbar-expand-lg{
+background-color: rgb(173, 233, 250) !important; 
+
+}
