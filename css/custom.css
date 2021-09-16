@@ -26,3 +26,26 @@ body{
 background-color: rgb(173, 233, 250) !important; 
 
 }
+
+.html5icon{
+    filter: invert(41%) sepia(83%) saturate(3492%) hue-rotate(348deg) brightness(91%) contrast(90%)
+
+}
+
+.css3icon{
+    filter: invert(29%) sepia(47%) saturate(7168%) hue-rotate(227deg) brightness(87%) contrast(100%);
+}
+
+.jsicon{
+
+    filter: invert(85%) sepia(97%) saturate(7493%) hue-rotate(339deg) brightness(101%) contrast(94%);
+}
+
+.facebookicon{
+
+    filter: invert(37%) sepia(6%) saturate(4938%) hue-rotate(182deg) brightness(102%) contrast(92%);
+}
+
+.twittericon{
+    filter: invert(64%) sepia(25%) saturate(996%) hue-rotate(164deg) brightness(96%) contrast(80%);
+}
