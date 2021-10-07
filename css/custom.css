@@ -160,3 +160,12 @@ background-color: rgb(173, 233, 250) !important;
   .notfound a:hover {
     background-color: #2c2c2c;
   }
+
+  #btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    height: 85px;
+    width: 85px;
+  }
