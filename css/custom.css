@@ -174,7 +174,16 @@ background-color: rgb(173, 233, 250) !important;
   
   }
 
-
+  #OIGnoAeSjHtZ {
+    display: none !important;
+    margin-bottom: 30px;
+    padding: 20px 10px;
+    background: #D30000;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+    }
 
   .peopleCarouselImg img {
     width: auto;
