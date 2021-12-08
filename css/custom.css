@@ -169,3 +169,34 @@ background-color: rgb(173, 233, 250) !important;
     height: 85px;
     width: 85px;
   }
+  .card{
+    height: 100%
+  
+  }
+
+
+
+  .peopleCarouselImg img {
+    width: auto;
+    height: 700px
+  }
+
+  body{
+    background: rgb(255,194,101);
+    background: linear-gradient(0deg, rgba(255,194,101,1) 0%, rgba(255,203,125,1) 60%, rgba(255,235,205,1) 100%);
+  }
+
+  #mainDiv{
+    animation: myAnim 1s ease-in 0s 1 normal forwards;
+  }
+  @keyframes myAnim {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
