@@ -23,3 +23,10 @@ function backToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+
+document.addEventListener('copy', (event) => {
+  const pagelink = `\n\nRead more at / Прочетете повече на: ${document.location.href}`;
+  event.clipboardData.setData('text', document.getSelection() + pagelink);
+  event.preventDefault();
+});
