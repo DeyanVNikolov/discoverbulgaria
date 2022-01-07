@@ -178,6 +178,13 @@ background-color: rgb(173, 233, 250) !important;
   background-color: #8698ff!important; 
 }
 
+.ignorelink{
+  color: white;
+}
+.ignorelink > :hover{
+  color:white !important;
+}
+
   #OIGnoAeSjHtZ {
     display: none !important;
     margin-bottom: 30px;
