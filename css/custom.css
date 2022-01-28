@@ -189,6 +189,11 @@ background-color: rgb(173, 233, 250) !important;
   background-color: rgb(255, 119, 119);
 }
 
+.text-important{
+  color: rgb(70, 196, 255) !important;
+text-decoration: underline;
+}
+
   #OIGnoAeSjHtZ {
     display: none !important;
     margin-bottom: 30px;
