@@ -60,22 +60,21 @@
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse  justify-content-end" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+                <div class="navbar-nav">
+          <script type="text/javascript">
+            // Popup window code
+            function newPopup(url) {
+              popupWindow = window.open(
+                url,'popUpWindow','height=600,width=600,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+            }
+            </script>
           <a class="nav-link" aria-current="page" href="/index.html">Начална страница</a>
           <a class="nav-link active" href="/lang/bg/cities.html">Градове</a>
           <a class="nav-link" href="/lang/bg/nature.html">Природа</a>
-          <a class="nav-link" href="http://facebook.com" target="popup"
-            onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://discoverbulgaria.online/','popup','width=600,height=600'); return false;"><i
-              class="fab fa-facebook-square"></i></a>
-          <a class="nav-link" href="http://twitter.com" target="popup"
-            onclick="window.open('https://twitter.com/intent/tweet?url=https://discoverbulgaria.online/&text=Check%20out%20Discover%20Bulgaria%20today!%20Find%20information%20about%20Bulgaria!','popup','width=600,height=600'); return false;"><i
-              class="fab fa-twitter-square"></i></a>
-          <a class="nav-link" href="http://pinterest.com" target="popup"
-            onclick="window.open('https://pinterest.com/pin/create/button/?url=https://discoverbulgaria.online/&media=&description=Check%20out%20Discover%20Bulgaria%20today!%20Find%20information%20about%20Bulgaria!','popup','width=600,height=600'); return false;"><i
-              class="fab fa-pinterest"></i></a>
-          <a class="nav-link" href="http://linkedin.com" target="popup"
-            onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://discoverbulgaria.online/','popup','width=600,height=600'); return false;"><i
-              class="fab fa-linkedin"></i></a>
+              <a class="nav-link" href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u=https://discoverbulgaria.online/');"><i class="fab fa-facebook-square"></i></a>
+              <a class="nav-link" href="JavaScript:newPopup('https://twitter.com/intent/tweet?url=https://discoverbulgaria.online/&text=Check%20out%20Discover%20Bulgaria%20today!%20Find%20information%20about%20Bulgaria!');"><i class="fab fa-twitter-square"></i></a>
+              <a class="nav-link" href="JavaScript:newPopup('https://pinterest.com/pin/create/button/?url=https://discoverbulgaria.online/&media=&description=Check%20out%20Discover%20Bulgaria%20today!%20Find%20information%20about%20Bulgaria!');"><i class="fab fa-pinterest-square"></i></a>
+            <a class="nav-link" href="JavaScript:newPopup('https://www.linkedin.com/shareArticle?mini=true&url=https://discoverbulgaria.online');"><i class="fab fa-linkedin"></i></a>
           <strong> <a class="nav-link" href="#"></a></strong>
           <strong> <a class="nav-link" href="/lang/en/cities/plovdiv.html">EN <img height="20px"
                 src="/img/us.svg"></a></strong>
@@ -228,7 +227,7 @@
     </script>
     <br>
     <div class="embed-responsive embed-responsive-16by9">
-      <video oncontextmenu="return false;" src="/video/PLOVDIV_ROTATE.mp4" autoplay nocontrols muted loop poster="/img/loading.png"></video>
+      <video  src="/video/PLOVDIV_ROTATE.mp4" autoplay nocontrols muted loop poster="/img/loading.png"></video>
     </div>
     <br>
     <br>
