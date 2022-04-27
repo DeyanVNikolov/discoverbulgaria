@@ -37,13 +37,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
   <link href="/css/custom.css" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4FD8X13DP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-V4FD8X13DP');
-</script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-V4FD8X13DP');
+  </script>
 </head>
 
 <body>
@@ -60,21 +63,31 @@
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse  justify-content-end" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
+        <div class="navbar-nav">
           <script type="text/javascript">
             // Popup window code
             function newPopup(url) {
               popupWindow = window.open(
-                url,'popUpWindow','height=600,width=600,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+                url, 'popUpWindow',
+                'height=600,width=600,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'
+              )
             }
-            </script>
+          </script>
           <a class="nav-link active" aria-current="page" href="index.html">Home</a>
           <a class="nav-link" href="lang/bg/cities.html">Cities</a>
           <a class="nav-link" href="lang/bg/nature.html">Nature</a>
-              <a class="nav-link" href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u=https://discoverbulgaria.online/');"><i class="fab fa-facebook-square"></i></a>
-              <a class="nav-link" href="JavaScript:newPopup('https://twitter.com/intent/tweet?url=https://discoverbulgaria.online/&text=Check%20out%20Discover%20Bulgaria%20today!%20Find%20information%20about%20Bulgaria!');"><i class="fab fa-twitter-square"></i></a>
-              <a class="nav-link" href="JavaScript:newPopup('https://pinterest.com/pin/create/button/?url=https://discoverbulgaria.online/&media=&description=Check%20out%20Discover%20Bulgaria%20today!%20Find%20information%20about%20Bulgaria!');"><i class="fab fa-pinterest-square"></i></a>
-            <a class="nav-link" href="JavaScript:newPopup('https://www.linkedin.com/shareArticle?mini=true&url=https://discoverbulgaria.online');"><i class="fab fa-linkedin"></i></a>
+          <a class="nav-link"
+            href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u=https://discoverbulgaria.online/');"><i
+              class="fab fa-facebook-square"></i></a>
+          <a class="nav-link"
+            href="JavaScript:newPopup('https://twitter.com/intent/tweet?url=https://discoverbulgaria.online/&text=Check%20out%20Discover%20Bulgaria%20today!%20Find%20information%20about%20Bulgaria!');"><i
+              class="fab fa-twitter-square"></i></a>
+          <a class="nav-link"
+            href="JavaScript:newPopup('https://pinterest.com/pin/create/button/?url=https://discoverbulgaria.online/&media=&description=Check%20out%20Discover%20Bulgaria%20today!%20Find%20information%20about%20Bulgaria!');"><i
+              class="fab fa-pinterest-square"></i></a>
+          <a class="nav-link"
+            href="JavaScript:newPopup('https://www.linkedin.com/shareArticle?mini=true&url=https://discoverbulgaria.online');"><i
+              class="fab fa-linkedin"></i></a>
           <strong> <a class="nav-link" href="#"></a></strong>
         </div>
       </div>
@@ -85,7 +98,7 @@
     <br>
     <br>
     <div class="text-center">
-      <img class="img-fluid" src="img/icon.svg">
+      <img class="img-fluid" src="img/icon.svg" style="max-width:450px">
       <h1 class="bgtext">Legal Agreement</h1>
       <br><br>
       <h4 class="bgtext">Photos of unknown or known origin are used on the pages of the Discover Bulgaria website with
@@ -102,7 +115,7 @@
           onclick="window.open('OFL.html','popup','width=600,height=600'); return false;"><img class="img-fluid"
             src="https://scripts.sil.org/cms/sites/nrsi/media/OFL_logo_rect_color.png"></a><a class="nav-link" href=""
           target="popup" onclick="window.open('OFL.html','popup','width=600,height=600'); return false;">Open Font
-          License </a> &copy; Vernon Adams / Google LLC  </h4>
+          License </a> &copy; Vernon Adams / Google LLC </h4>
       <br><br>
       <h4 class="bgtext"><img height="30px" src="img/facebook.svg" class="facebookicon"> Facebook Share &copy Meta
         Platforms, Inc.</h4>
@@ -142,17 +155,14 @@
         <div class="row text-center d-flex justify-content-center pt-5">
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="en.html" class="text-white">Home</a>
+              <a href="en.html" class="text-white">Home</a> </h6>
+          </div>
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold"> <a href="/lang/en/cities.html" class="text-white">Cities</a>
             </h6>
           </div>
           <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="/lang/en/cities.html" class="text-white">Cities</a>
-            </h6>
-          </div>
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="/lang/en/nature.html" class="text-white">Nature</a>
+            <h6 class="text-uppercase font-weight-bold"> <a href="/lang/en/nature.html" class="text-white">Nature</a>
             </h6>
           </div>
           <div class="col-md-2">
@@ -176,24 +186,25 @@
               This site is for educational purposes only.<br><br></h4>
             <h5>© DiscoverBulgaria is a service of PGKMKS, Varna. 2021-2022.</h5>
             <br>
-            <div style="padding-bottom: 10px;" class="fb-share-button"
-              data-href="https://discoverbulgaria.online/" data-layout="button" data-size="large"><a
-                target="_blank"
+            <div style="padding-bottom: 10px;" class="fb-share-button" data-href="https://discoverbulgaria.online/"
+              data-layout="button" data-size="large"><a target="_blank"
                 href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdeyanvnikolov.github.io%2Fdiscoverbulgaria%2F&amp;src=sdkpreparse"
                 class="fb-xfbml-parse-ignore">Share</a></div><br>
             <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large"
-              data-url="https://discoverbulgaria.online/" data-hashtags="discover"
-              data-show-count="false">Tweet</a>
+              data-url="https://discoverbulgaria.online/" data-hashtags="discover" data-show-count="false">Tweet</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             <br><br>
-       <h4>Follow us on social media</h4>
-            <a class="ignorelink" href="https://instagram.com/discoverbulgaria.online/" target="_blank"><i class="fab fa-instagram-square" style="font-size: 50px; padding-right: 15px;"></i></a>
-            <a class="ignorelink" href="https://fb.com/discoverbulgaria.online" target="_blank"><i class="fab fa-facebook-square" style="font-size: 50px; padding-right: 15px;"></i></a>
-              <a class="ignorelink" href="https://m.me/discoverbulgariaonline" target="_blank"><i class="fab fa-facebook-messenger" style="font-size: 50px;"></i></a>
-              <br><br>
-              <h6> DiscoverBulgaria collects data about your visit through Google Analytics. <br> Using this site, you
-                agree to this. <br> Data is processed according to <a class="text-important"
-                  href="https://policies.google.com/privacy?hl=en-US"> Google's Privacy Policy </a> </h6>
+            <h4>Follow us on social media</h4>
+            <a class="ignorelink" href="https://instagram.com/discoverbulgaria.online/" target="_blank"><i
+                class="fab fa-instagram-square" style="font-size: 50px; padding-right: 15px;"></i></a>
+            <a class="ignorelink" href="https://fb.com/discoverbulgaria.online" target="_blank"><i
+                class="fab fa-facebook-square" style="font-size: 50px; padding-right: 15px;"></i></a>
+            <a class="ignorelink" href="https://m.me/discoverbulgariaonline" target="_blank"><i
+                class="fab fa-facebook-messenger" style="font-size: 50px;"></i></a>
+            <br><br>
+            <h6> DiscoverBulgaria collects data about your visit through Google Analytics. <br> Using this site, you
+              agree to this. <br> Data is processed according to <a class="text-important"
+                href="https://policies.google.com/privacy?hl=en-US"> Google's Privacy Policy </a> </h6>
 
           </div>
         </div>

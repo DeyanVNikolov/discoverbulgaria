@@ -15,7 +15,7 @@
     font-size: 150% !important;
 }
 h1 {
-    font-size: 5.4rem;
+    font-size: 4rem;
     color: #fff;
     margin-bottom: 5rem;
 }
@@ -36,7 +36,7 @@ h2 {
     padding: 2rem;
 }
 .container h1,h2,h3,h4,h5,h6,p,a{
-    font-family: 'Nova Square', cursive;
+    font-family: 'Oswald', cursive;
 }
 
 .flex-column {
@@ -118,7 +118,6 @@ input {
     border: none;
     box-shadow: 0. 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
 }
-
 input::placeholder {
     color: #aaa;
 }

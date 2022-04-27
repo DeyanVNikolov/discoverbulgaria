@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Image Puzzle</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/image-puzzle.css" rel="stylesheet" />
+    <script src="js/image-puzzle.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="collage">
+        <h2>Image Puzzle</h2>
+        <hr />
+        <div id="playPanel" style="padding:5px;display:none;">
+            <h3 id="imgTitle"></h3>
+            <hr />
+            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                <ul id="sortable" class="sortable"></ul>
+                <div id="actualImageBox">
+                    <div id="stepBox">
+                        <div>Стъпки:</div>
+                        <div id="stepCount" class="stepCount">0</div>
+                    </div>
+                    <div id="timeBox">
+                        Време <span id="timerPanel"></span> секунди
+                    </div>
+                    <img id="actualImage" />
+                    <div>Пренаредете частите, за да направите това изображение!</div>
+                    <p id="levelPanel">
+                        <input type="radio" name="level" id="easy" checked="checked" value="3"
+                            onchange="imagePuzzle.startGame(images, this.value);" /> <label for="easy">Лесно</label>
+                        <input type="radio" name="level" id="medium" value="4"
+                            onchange="imagePuzzle.startGame(images, this.value);" /> <label
+                            for="medium">Нормално</label>
+                        <input type="radio" name="level" id="hard" value="5"
+                            onchange="imagePuzzle.startGame(images, this.value);" /> <label for="hard">Трудно</label>
+                    </p>
+                    <div>
+                        <button id="newPhoto" type="button" class="btn" onclick="restart();">Друга снимка</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
+                <h2 style="text-align:center">Край на играта!</h2>
+                Поздравления! <br /> Завършихте снимката!
+                <br /> Стъпки: <span id="stepCount" class="stepCount">0</span> стъпки.
+                <br /> Време: <span class="timeCount">0</span> секунди<br />
+                <div>
+                    <button type="button" onclick="window.location.reload(true);">Play Again</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
+                .test(navigator.userAgent)) {
+                window.location.href = "locked.html"
+            }
+            if ("ontouchstart" in document.documentElement) {
+                window.location.href = "locked.html"
+
+            }
+            var images = [{
+                src: 'https://discoverbulgaria.online/img/aleksandar_nevski.png',
+                title: 'London Bridge'
+            }, ];
+
+            window.onload = function () {
+                var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute(
+                    'value');
+                imagePuzzle.startGame(images, gridSize);
+            };
+
+            function restart() {
+                var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute('value');
+                imagePuzzle.startGame(images, gridSize);
+            }
+        </script>
+    </div>
+</body>
+
+</html>

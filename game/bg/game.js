@@ -65,6 +65,24 @@ let questions = [{
         answer: 3,
         img: "img/980x551_1569585947.jpg"
     },
+    {
+        question: 'Къде се намира "компасът"?',
+        choice1: 'Бургас',
+        choice2: 'Варна',
+        choice3: 'Пловдив',
+        choice4: 'Вълчи дол',
+        answer: 1,
+        img: "https://discoverbulgaria.online/img/kompasat.jpeg"
+    },
+    {
+        question: 'Гребната база е символ на ... ?',
+        choice1: 'Костинброд',
+        choice2: 'Стара Загора',
+        choice3: 'Варна',
+        choice4: 'Пловдив',
+        answer: 4,
+        img: "https://discoverbulgaria.online/img/grebna_baza.jpg"
+    },
 ]
 
 const SCORE_POINTS = 100
@@ -92,6 +110,8 @@ getNewQuestion = () => {
     currentQuestion = availableQuestions[questionsIndex]
     question.innerText = currentQuestion.question
     document.getElementById("imgimgimg").src=currentQuestion.img
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0
 
 
     choices.forEach(choice => {
