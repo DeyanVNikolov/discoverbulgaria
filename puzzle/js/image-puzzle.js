@@ -1,5 +1,97 @@
 ﻿var timerFunction;
-
+var images = [{
+        src: 'images/ezera.png',
+        title: 'Седемте рилски езера'
+    },
+    {
+        src: 'images/vitosha.png',
+        title: 'Витоша'
+    },
+    {
+        src: 'images/raisko.png',
+        title: 'Райско пръскало'
+    },
+    {
+        src: 'images/ochite.png',
+        title: 'Пещера "Проходна"'
+    },
+    {
+        src: 'images/lednika.png',
+        title: 'Пещера "Леденика"'
+    },
+    {
+        src: 'images/magura.png',
+        title: 'Пещера "Магура"'
+    },
+    {
+        src: 'images/yagodinska.png',
+        title: 'Ягодинска пещера'
+    },
+    {
+        src: 'images/devetashka.png',
+        title: 'Деветашка пещера'
+    },
+    {
+        src: 'images/snejanka.png',
+        title: 'Пещера „Снежанка“'
+    },
+    {
+        src: 'images/skoka.png',
+        title: 'Водопад "Скока"'
+    },
+    {
+        src: 'images/kademlijsko.png',
+        title: 'Кадемлийско пръскало'
+    },
+    {
+        src: 'images/hajdushki.png',
+        title: 'Хайдушки водопади'
+    },
+    {
+        src: 'images/krusha.png',
+        title: 'Крушунски водопади'
+    },
+    {
+        src: 'images/piramidi.png',
+        title: 'Мелнишки пирамиди'
+    },
+    {
+        src: 'images/todorka.png',
+        title: 'Връх "Тодорка"'
+    },
+    {
+        src: 'images/musala.png',
+        title: 'Връх Мусала'
+    },
+    {
+        src: 'images/malyovica.png',
+        title: 'Връх Мальовица'
+    },
+    {
+        src: 'images/alsk_nvsk.png',
+        title: 'Александър Невски'
+    },
+    {
+        src: 'images/antch_teater.png',
+        title: 'Античният Театър'
+    },
+    {
+        src: 'images/asparuhovo.png',
+        title: 'Аспаруховски мост'
+    },
+    {
+        src: 'images/chadur.png',
+        title: 'Чадър Чешма'
+    },
+    {
+        src: 'images/racho.png',
+        title: 'Рачо Казанджията'
+    },
+    {
+        src: 'images/most_burgas.png',
+        title: 'Бургаският мост'
+    },
+];
 var imagePuzzle = {
     stepCount: 0,
     startTime: new Date().getTime(),
@@ -46,15 +138,14 @@ var imagePuzzle = {
 
                 if (origin && dest && p) {
                     let temp = dest.nextSibling;
-                    let x_diff = origin.offsetLeft-dest.offsetLeft;
-                    let y_diff = origin.offsetTop-dest.offsetTop;
+                    let x_diff = origin.offsetLeft - dest.offsetLeft;
+                    let y_diff = origin.offsetTop - dest.offsetTop;
 
-                    if(y_diff == 0 && x_diff >0){
+                    if (y_diff == 0 && x_diff > 0) {
                         //LEFT SWAP
                         p.insertBefore(origin, dest);
                         p.insertBefore(temp, origin);
-                    }
-                    else{
+                    } else {
                         p.insertBefore(dest, origin);
                         p.insertBefore(origin, temp);
                     }
@@ -80,7 +171,9 @@ var imagePuzzle = {
     }
 };
 
-isSorted = (arr) => arr.every((elem, index) => { return elem == index; });
+isSorted = (arr) => arr.every((elem, index) => {
+    return elem == index;
+});
 
 var helper = {
     doc: (id) => document.getElementById(id) || document.createElement("div"),

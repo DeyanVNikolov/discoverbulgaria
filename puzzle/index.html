@@ -4,172 +4,271 @@
 <head>
     <title>Image Puzzle</title>
     <link href="css/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/image-puzzle.css" rel="stylesheet" />
+    <link href="css/mdb.min.css" rel="stylesheet" />
+    <link href="css/puzzle.css" rel="stylesheet" />
     <script src="js/image-puzzle.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/#[[latestVersion]]#/mdb.min.css" rel="sty
+    lesheet" />
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
 </head>
 
 <body>
-    <div id="collage">
-        <h2>Image Puzzle</h2>
-        <hr />
-        <div id="playPanel" style="padding:5px;display:none;">
-            <h3 id="imgTitle"></h3>
-            <hr />
-            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
-                <ul id="sortable" class="sortable"></ul>
-                <div id="actualImageBox">
-                    <div id="stepBox">
-                        <div>Стъпки:</div>
-                        <div id="stepCount" class="stepCount">0</div>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"
+        nonce="swaUXcQT"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <img class="img-fluid" src="/img/icon.svg" height="60" width="60"><a class="navbar-brand"
+                href="/index.html">Discover
+                Bulgaria</a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse  justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <script type="text/javascript">
+                        // Popup window code
+                        function newPopup(url) {
+                            popupWindow = window.open(
+                                url, 'popUpWindow',
+                                'height=600,width=600,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'
+                            )
+                        }
+                    </script>
+                    <a class="nav-link" aria-current="page" href="/index.html">Начална Страница</a>
+                    <a class="nav-link" href="/lang/bg/cities.html">Градове</a>
+                    <a class="nav-link" href="/lang/bg/nature.html">Природа</a>
+          <div class="dropdown nav-link">
+            <a
+              class="dropdown-toggle"
+              role="button"
+              id="dropdownMenuLink"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Игри
+            </a>
+          
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="/puzzle/index.html">Пъзел</a></li>
+              <li><a class="dropdown-item" href="/game/bg/index.html">Викторина (quiz)</a></li>
+            </ul>
+          </div>
+                    <a class="nav-link"
+                        href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u=https://discoverbulgaria.online/');"><i
+                            class="fab fa-facebook-square"></i></a>
+                    <a class="nav-link"
+                        href="JavaScript:newPopup('https://twitter.com/intent/tweet?url=https://discoverbulgaria.online/&text=Check%20out%20Discover%20Bulgaria%20today!%20Find%20information%20about%20Bulgaria!');"><i
+                            class="fab fa-twitter-square"></i></a>
+                    <a class="nav-link"
+                        href="JavaScript:newPopup('https://pinterest.com/pin/create/button/?url=https://discoverbulgaria.online/&media=&description=Check%20out%20Discover%20Bulgaria%20today!%20Find%20information%20about%20Bulgaria!');"><i
+                            class="fab fa-pinterest-square"></i></a>
+                    <a class="nav-link"
+                        href="JavaScript:newPopup('https://www.linkedin.com/shareArticle?mini=true&url=https://discoverbulgaria.online');"><i
+                            class="fab fa-linkedin"></i></a>
+                    <strong> <a class="nav-link" href="#"></a></strong>
+                    <strong> <a class="nav-link" href="/lang/en/cities.html">EN <img height="20px"
+                                src="/img/us.svg"></a></strong>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br><br><br>
+    <div class="container">
+        <div id="collage">
+            <div id="playPanel" style="padding:5px;display:none;">
+                <h3 id="imgTitle"></h3>
+                <hr />
+                <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                    <ul id="sortable" class="sortable"></ul>
+                    <div id="actualImageBox">
+                        <div id="stepBox">
+                            <div>Стъпки:</div>
+                            <div id="stepCount" class="stepCount">0</div>
+                        </div>
+                        <div id="timeBox">
+                            Време <span id="timerPanel"></span> секунди
+                        </div>
+                        <img id="actualImage" />
+                        <div>Пренаредете частите, за да направите това изображение!</div>
+                        <p id="levelPanel">
+                            <input type="radio" name="level" id="easy" checked="checked" value="3"
+                                onchange="imagePuzzle.startGame(images, this.value); restart()" /> <label for="easy">Лесно</label>
+                            <input type="radio" name="level" id="medium" value="4"
+                                onchange="imagePuzzle.startGame(images, this.value); restart()" /> <label
+                                for="medium">Нормално</label>
+                            <input type="radio" name="level" id="hard" value="5"
+                                onchange="imagePuzzle.startGame(images, this.value); restart()" /> <label
+                                for="hard">Трудно</label>
+                        </p>
+                        <div>
+                            <button id="newPhoto" type="button" class="btn" onclick="restart();">Друга снимка</button>
+                        </div>
                     </div>
-                    <div id="timeBox">
-                        Време <span id="timerPanel"></span> секунди
-                    </div>
-                    <img id="actualImage" />
-                    <div>Пренаредете частите, за да направите това изображение!</div>
-                    <p id="levelPanel">
-                        <input type="radio" name="level" id="easy" checked="checked" value="3"
-                            onchange="imagePuzzle.startGame(images, this.value);" /> <label for="easy">Лесно</label>
-                        <input type="radio" name="level" id="medium" value="4"
-                            onchange="imagePuzzle.startGame(images, this.value);" /> <label
-                            for="medium">Нормално</label>
-                        <input type="radio" name="level" id="hard" value="5"
-                            onchange="imagePuzzle.startGame(images, this.value);" /> <label for="hard">Трудно</label>
-                    </p>
+                </div>
+            </div>
+            <div id="gameOver" style="display:none;">
+                <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
+                    <h2 style="text-align:center">Край на играта!</h2>
+                    Поздравления! <br /> Завършихте снимката!
+                    <br /> Стъпки: <span id="stepCount" class="stepCount">0</span> стъпки.
+                    <br /> Време: <span class="timeCount">0</span> секунди<br />
                     <div>
-                        <button id="newPhoto" type="button" class="btn" onclick="restart();">Друга снимка</button>
+                        <button type="button" onclick="window.location.reload(true);">Play Again</button>
                     </div>
                 </div>
             </div>
+
+
+            <script>
+                var images = [{
+                        src: 'images/ezera.png',
+                        title: 'Седемте рилски езера'
+                    },
+                    {
+                        src: 'images/vitosha.png',
+                        title: 'Витоша'
+                    },
+                    {
+                        src: 'images/raisko.png',
+                        title: 'Райско пръскало'
+                    },
+                    {
+                        src: 'images/ochite.png',
+                        title: 'Пещера "Проходна"'
+                    },
+                    {
+                        src: 'images/lednika.png',
+                        title: 'Пещера "Леденика"'
+                    },
+                    {
+                        src: 'images/magura.png',
+                        title: 'Пещера "Магура"'
+                    },
+                    {
+                        src: 'images/yagodinska.png',
+                        title: 'Ягодинска пещера'
+                    },
+                    {
+                        src: 'images/devetashka.png',
+                        title: 'Деветашка пещера'
+                    },
+                    {
+                        src: 'images/snejanka.png',
+                        title: 'Пещера „Снежанка“'
+                    },
+                    {
+                        src: 'images/skoka.png',
+                        title: 'Водопад "Скока"'
+                    },
+                    {
+                        src: 'images/kademlijsko.png',
+                        title: 'Кадемлийско пръскало'
+                    },
+                    {
+                        src: 'images/hajdushki.png',
+                        title: 'Хайдушки водопади'
+                    },
+                    {
+                        src: 'images/krusha.png',
+                        title: 'Крушунски водопади'
+                    },
+                    {
+                        src: 'images/piramidi.png',
+                        title: 'Мелнишки пирамиди'
+                    },
+                    {
+                        src: 'images/todorka.png',
+                        title: 'Връх "Тодорка"'
+                    },
+                    {
+                        src: 'images/musala.png',
+                        title: 'Връх Мусала'
+                    },
+                    {
+                        src: 'images/malyovica.png',
+                        title: 'Връх Мальовица'
+                    },
+                    {
+                        src: 'images/alsk_nvsk.png',
+                        title: 'Александър Невски'
+                    },
+                    {
+                        src: 'images/antch_teater.png',
+                        title: 'Античният Театър'
+                    },
+                    {
+                        src: 'images/asparuhovo.png',
+                        title: 'Аспаруховски мост'
+                    },
+                    {
+                        src: 'images/chadur.png',
+                        title: 'Чадър Чешма'
+                    },
+                    {
+                        src: 'images/racho.png',
+                        title: 'Рачо Казанджията'
+                    },
+                    {
+                        src: 'images/most_burgas.png',
+                        title: 'Бургаският мост'
+                    },
+                ];
+
+                function restart() {
+                    var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute(
+                        'value');
+                    imagePuzzle.startGame(images, gridSize);
+                }
+
+                window.onload = function () {
+                    var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute(
+                        'value');
+                    imagePuzzle.startGame(images, gridSize);
+                };
+            </script>
         </div>
-        <div id="gameOver" style="display:none;">
-            <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
-                <h2 style="text-align:center">Край на играта!</h2>
-                Поздравления! <br /> Завършихте снимката!
-                <br /> Стъпки: <span id="stepCount" class="stepCount">0</span> стъпки.
-                <br /> Време: <span class="timeCount">0</span> секунди<br />
-                <div>
-                    <button type="button" onclick="window.location.reload(true);">Play Again</button>
+    </div>
+    <div class="modal top fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-mdb-backdrop="true" data-mdb-keyboard="true">
+        <div class="modal-dialog modal-lg  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Предупреждение</h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">Този пъзел е предвиден за игра от устройство тип PC или Laptop. Трябва да имате
+                    мишка и да не сте с touch екран. Може да не функционира правилно, продължете на свои риск.</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal"
+                        onclick="document.location.href='/index.html'">
+                        Обратно към началната страница
+                    </button>
+                    <button type="button" class="btn btn-primary" data-mdb-dismiss="modal"
+                        onclick="document.getElementById('collage').style = 'display:block;'">Продължи</button>
                 </div>
             </div>
         </div>
-
-        <script>
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
-                .test(navigator.userAgent)) {
-                window.location.href = "locked.html"
-            }
-            if ("ontouchstart" in document.documentElement) {
-                window.location.href = "locked.html"
-
-            }
-            var images = [{
-                    src: 'images/ezera.png',
-                    title: 'Седемте рилски езера'
-                },
-                {
-                    src: 'images/vitosha.png',
-                    title: 'Витоша'
-                },
-                {
-                    src: 'images/raisko.png',
-                    title: 'Райско пръскало'
-                },
-                {
-                    src: 'images/ochite.png',
-                    title: 'Пещера "Проходна"'
-                },
-                {
-                    src: 'images/lednika.png',
-                    title: 'Пещера "Леденика"'
-                },
-                {
-                    src: 'images/magura.png',
-                    title: 'Пещера "Магура"'
-                },
-                {
-                    src: 'images/yagodinska.png',
-                    title: 'Ягодинска пещера'
-                },
-                {
-                    src: 'images/devetashka.png',
-                    title: 'Деветашка пещера'
-                },
-                {
-                    src: 'images/snejanka.png',
-                    title: 'Пещера „Снежанка“'
-                },
-                {
-                    src: 'images/skoka.png',
-                    title: 'Водопад "Скока"'
-                },
-                {
-                    src: 'images/kademlijsko.png',
-                    title: 'Кадемлийско пръскало'
-                },
-                {
-                    src: 'images/hajdushki.png',
-                    title: 'Хайдушки водопади'
-                },
-                {
-                    src: 'images/krusha.png',
-                    title: 'Крушунски водопади'
-                },
-                {
-                    src: 'images/piramidi.png',
-                    title: 'Мелнишки пирамиди'
-                },
-                {
-                    src: 'images/todorka.png',
-                    title: 'Връх "Тодорка"'
-                },
-                {
-                    src: 'images/musala.png',
-                    title: 'Връх Мусала'
-                },
-                {
-                    src: 'images/malyovica.png',
-                    title: 'Връх Мальовица'
-                },
-                {
-                    src: 'images/alsk_nvsk.png',
-                    title: 'Александър Невски'
-                },
-                {
-                    src: 'images/antch_teater.png',
-                    title: 'Античният Театър'
-                },
-                {
-                    src: 'images/asparuhovo.png',
-                    title: 'Аспаруховски мост'
-                },
-                {
-                    src: 'images/chadur.png',
-                    title: 'Чадър Чешма'
-                },
-                {
-                    src: 'images/racho.png',
-                    title: 'Рачо Казанджията'
-                },
-                {
-                    src: 'images/most_burgas.png',
-                    title: 'Бургаският мост'
-                },
-            ];
-
-            window.onload = function () {
-                var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute(
-                    'value');
-                imagePuzzle.startGame(images, gridSize);
-            };
-
-            function restart() {
-                var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute('value');
-                imagePuzzle.startGame(images, gridSize);
-            }
-        </script>
     </div>
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            const myModalEl = document.getElementById('myModal')
+            const modal = new mdb.Modal(myModalEl)
+            modal.show()
+            document.getElementById('collage').style = "display:none;"
+        }
+    </script>
 </body>
 
 </html>

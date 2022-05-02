@@ -1,9 +1,11 @@
 .bgtext{
 font-family: "Oswald", "sans-serif"
 }
-body{
-    background-color: blanchedalmond;
+
+html {
+  height: 100%;
 }
+
 
 .hm-gradient {
     background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
@@ -229,11 +231,18 @@ text-decoration: underline;
     height: 700px
   }
 
-  body{
+
+  html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background: rgb(255,194,101);
     background: linear-gradient(0deg, rgba(255,194,101,1) 0%, rgba(255,203,125,1) 60%, rgba(255,235,205,1) 100%);
-  }
-
+}
   #mainDiv{
     animation: myAnim 1s ease-in 0s 1 normal forwards;
   }
