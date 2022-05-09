@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Image Puzzle</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/image-puzzle.css" rel="stylesheet" />
+    <link href="css/mdb.min.css" rel="stylesheet" />
+    <link href="css/puzzle.css" rel="stylesheet" />
+    <script src="js/image-puzzle.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/#[[latestVersion]]#/mdb.min.css" rel="sty
+    lesheet" />
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"
+        nonce="swaUXcQT"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <img class="img-fluid" src="/img/icon.svg" height="60" width="60"><a class="navbar-brand"
+                href="/index.html">Discover
+                Bulgaria</a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse  justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <script type="text/javascript">
+                        // Popup window code
+                        function newPopup(url) {
+                            popupWindow = window.open(
+                                url, 'popUpWindow',
+                                'height=600,width=600,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'
+                            )
+                        }
+                    </script>
+                    <a class="nav-link" aria-current="page" href="/lang/en/en.html">Home</a>
+                    <a class="nav-link" href="/lang/en/cities.html">Cities</a>
+                    <a class="nav-link" href="/lang/en/nature.html">Nature</a>
+                    <div class="dropdown nav-link">
+                        <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown"
+                            aria-expanded="false">
+                            Games
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="/puzzleen/index.html">Puzzle</a></li>
+                            <li><a class="dropdown-item" href="/game/en/index.html">Quiz</a></li>
+                        </ul>
+                    </div>
+                    <a class="nav-link"
+                        href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u=https://discoverbulgaria.online/');"><i
+                            class="fab fa-facebook-square"></i></a>
+                    <a class="nav-link"
+                        href="JavaScript:newPopup('https://twitter.com/intent/tweet?url=https://discoverbulgaria.online/&text=Check%20out%20Discover%20Bulgaria%20today!%20Find%20information%20about%20Bulgaria!');"><i
+                            class="fab fa-twitter-square"></i></a>
+                    <a class="nav-link"
+                        href="JavaScript:newPopup('https://pinterest.com/pin/create/button/?url=https://discoverbulgaria.online/&media=&description=Check%20out%20Discover%20Bulgaria%20today!%20Find%20information%20about%20Bulgaria!');"><i
+                            class="fab fa-pinterest-square"></i></a>
+                    <a class="nav-link"
+                        href="JavaScript:newPopup('https://www.linkedin.com/shareArticle?mini=true&url=https://discoverbulgaria.online');"><i
+                            class="fab fa-linkedin"></i></a>
+                    <strong> <a class="nav-link" href="#"></a></strong>
+                    <strong> <a class="nav-link" href="/puzzle/index.html">BG <img height="20px"
+                                src="/img/bg.svg"></a></strong>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br><br><br>
+    <div class="container">
+        <div id="collage">
+            <div id="playPanel" style="padding:5px;display:none;">
+                <h3 id="imgTitle"></h3>
+                <hr />
+                <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                    <ul id="sortable" class="sortable"></ul>
+                    <div id="actualImageBox">
+                        <div id="stepBox">
+                            <div>Steps:</div>
+                            <div id="stepCount" class="stepCount">0</div>
+                        </div>
+                        <div id="timeBox">
+                            Time: <span id="timerPanel"></span> seconds
+                        </div>
+                        <img id="actualImage" />
+                        <div>Rearrange the parts to make this image!</div>
+                        <p id="levelPanel">
+                            <input type="radio" name="level" id="easy" checked="checked" value="3"
+                                onchange="imagePuzzle.startGame(images, this.value); restart()" /> <label
+                                for="easy">Easy</label>
+                            <input type="radio" name="level" id="medium" value="4"
+                                onchange="imagePuzzle.startGame(images, this.value); restart()" /> <label
+                                for="medium">Normal</label>
+                            <input type="radio" name="level" id="hard" value="5"
+                                onchange="imagePuzzle.startGame(images, this.value); restart()" /> <label
+                                for="hard">Hard</label>
+                        </p>
+                        <div>
+                            <button id="newPhoto" type="button" class="btn" onclick="restart();">Change photo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="gameOver" style="display:none;">
+                <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
+                    <h2 style="text-align:center">End of the game!</h2>
+                    Congratulations! <br /> You have finished the photo!
+                    <br /> Steps: <span id="stepCount" class="stepCount">0</span> steps.
+                    <br /> Time: <span class="timeCount">0</span> seconds<br />
+                    <div>
+                        <button type="button" onclick="window.location.reload(true);">Play Again</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <script>
+                var images = [{
+                        src: 'images/ezera.png',
+                        title: 'The Seven Rila Lakes'
+                    },
+                    {
+                        src: 'images/vitosha.png',
+                        title: 'Vitosha'
+                    },
+                    {
+                        src: 'images/raisko.png',
+                        title: 'Paradise waterfall'
+                    },
+                    {
+                        src: 'images/ochite.png',
+                        title: 'Prohodna Cave'
+                    },
+                    {
+                        src: 'images/lednika.png',
+                        title: 'Ledenika cave"'
+                    },
+                    {
+                        src: 'images/magura.png',
+                        title: 'Magura Cave'
+                    },
+                    {
+                        src: 'images/yagodinska.png',
+                        title: 'Yagodinska cave'
+                    },
+                    {
+                        src: 'images/devetashka.png',
+                        title: 'Devetashka cave'
+                    },
+                    {
+                        src: 'images/snejanka.png',
+                        title: 'Snejanka Cave'
+                    },
+                    {
+                        src: 'images/skoka.png',
+                        title: 'The waterfall "skoka"'
+                    },
+                    {
+                        src: 'images/kademlijsko.png',
+                        title: 'Kademlijan'
+                    },
+                    {
+                        src: 'images/hajdushki.png',
+                        title: 'Haidouk waterfalls'
+                    },
+                    {
+                        src: 'images/krusha.png',
+                        title: 'Krushun waterfalls'
+                    },
+                    {
+                        src: 'images/piramidi.png',
+                        title: 'Melnik Pyramids'
+                    },
+                    {
+                        src: 'images/todorka.png',
+                        title: 'Todorka Peak'
+                    },
+                    {
+                        src: 'images/musala.png',
+                        title: 'Mount Musala'
+                    },
+                    {
+                        src: 'images/malyovica.png',
+                        title: 'Malyovitsa peak'
+                    },
+                    {
+                        src: 'images/alsk_nvsk.png',
+                        title: 'Alexander Nevsky'
+                    },
+                    {
+                        src: 'images/antch_teater.png',
+                        title: 'The ancient theater'
+                    },
+                    {
+                        src: 'images/asparuhovo.png',
+                        title: 'Asparuhov Bridge'
+                    },
+                    {
+                        src: 'images/chadur.png',
+                        title: 'Fountain'
+                    },
+                    {
+                        src: 'images/racho.png',
+                        title: 'Racho Kazandzhiya'
+                    },
+                    {
+                        src: 'images/most_burgas.png',
+                        title: 'Burgas Bridge'
+                    },
+                    {
+                        src: 'images/tryavna.png',
+                        title: 'Clocktower'
+                    },
+                    {
+                        src: 'images/tryavna_1.png',
+                        title: 'Kiwigire bridge'
+                    },
+                    {
+                        src: 'images/lovech.png',
+                        title: 'The covered bridge'
+                    },
+                    {
+                        src: 'images/nesebar.png',
+                        title: 'Windmill'
+                    },
+                    {
+                        src: 'images/nesebar_1.png',
+                        title: 'Aviation monument'
+                    },
+                    {
+                        src: 'images/gabrovo.png',
+                        title: 'National April High School'
+                    },
+                    {
+                        src: 'images/vidin.png',
+                        title: 'The Baba Vida Fortress'
+                    },
+                    {
+                        src: 'images/zagora.png',
+                        title: 'The steam locomotive of the rebels since 1923'
+                    },
+                    {
+                        src: 'images/zagora_1.png',
+                        title: 'Buhchev house'
+                    },
+                ];
+
+                function restart() {
+                    var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute(
+                        'value');
+                    imagePuzzle.startGame(images, gridSize);
+                }
+
+                window.onload = function () {
+                    var gridSize = document.querySelector('#levelPanel input[type="radio"]:checked').getAttribute(
+                        'value');
+                    imagePuzzle.startGame(images, gridSize);
+                };
+            </script>
+        </div>
+    </div>
+    <div class="modal top fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-mdb-backdrop="true" data-mdb-keyboard="true">
+        <div class="modal-dialog modal-lg  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">This puzzle is designed to play by a PC or LAPTOP device.You should have
+                    Mouse and don't have a touch screen. It may not function properly, continue at your risk.</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal"
+                        onclick="document.location.href='/lang/en/en.html'">
+                        Back to the homepage
+                    </button>
+                    <button type="button" class="btn btn-primary" data-mdb-dismiss="modal"
+                        onclick="document.getElementById('collage').style = 'display:block;'">Continued</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            const myModalEl = document.getElementById('myModal')
+            const modal = new mdb.Modal(myModalEl)
+            modal.show()
+            document.getElementById('collage').style = "display:none;"
+        }
+    </script>
+</body>
+
+</html>
