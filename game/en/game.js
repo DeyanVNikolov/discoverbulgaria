@@ -45,7 +45,7 @@ let questions = [{
         choice3: 'Veliko Tarnovo',
         choice4: 'Shumen',
         answer: 4,
-        img: "https://discoverbulgaria.online/img/shumen_1.jpg"
+        img: "https://deyanvnikolov.github.io/discoverbulgaria/img/shumen_1.jpg"
     },
     {
         question: 'Which city is known for its "Salt Museum"',
@@ -54,7 +54,7 @@ let questions = [{
         choice3: 'Targovishte',
         choice4: 'Varna',
         answer: 1,
-        img: "https://discoverbulgaria.online/img/pomorie_sol.jpg"
+        img: "https://deyanvnikolov.github.io/discoverbulgaria/img/pomorie_sol.jpg"
     },
     {
         question: 'Where is the National Palace of Culture?',
@@ -72,7 +72,7 @@ let questions = [{
         choice3: 'Plovdiv',
         choice4: 'Wolf dol',
         answer: 1,
-        img: "https://discoverbulgaria.online/img/kompasat.jpeg"
+        img: "https://deyanvnikolov.github.io/discoverbulgaria/img/kompasat.jpeg"
     },
     {
         question: 'The rowing base is a symbol of ...?',
@@ -81,7 +81,7 @@ let questions = [{
         choice3: 'Varna',
         choice4: 'Plovdiv',
         answer: 4,
-        img: "https://discoverbulgaria.online/img/grebna_baza.jpg"
+        img: "https://deyanvnikolov.github.io/discoverbulgaria/img/grebna_baza.jpg"
     },
 ]
 

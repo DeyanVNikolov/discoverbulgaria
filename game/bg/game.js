@@ -45,7 +45,7 @@ let questions = [{
         choice3: 'Велико Търново',
         choice4: 'Шумен',
         answer: 4,
-        img: "https://discoverbulgaria.online/img/shumen_1.jpg"
+        img: "https://deyanvnikolov.github.io/discoverbulgaria/img/shumen_1.jpg"
     },
     {
         question: 'Кой град е известен със своя "музей на солта"',
@@ -54,7 +54,7 @@ let questions = [{
         choice3: 'Търговище',
         choice4: 'Варна',
         answer: 1,
-        img: "https://discoverbulgaria.online/img/pomorie_sol.jpg"
+        img: "https://deyanvnikolov.github.io/discoverbulgaria/img/pomorie_sol.jpg"
     },
     {
         question: 'Къде се намира НДК?',
@@ -72,7 +72,7 @@ let questions = [{
         choice3: 'Пловдив',
         choice4: 'Вълчи дол',
         answer: 1,
-        img: "https://discoverbulgaria.online/img/kompasat.jpeg"
+        img: "https://deyanvnikolov.github.io/discoverbulgaria/img/kompasat.jpeg"
     },
     {
         question: 'Гребната база е символ на ... ?',
@@ -81,7 +81,7 @@ let questions = [{
         choice3: 'Варна',
         choice4: 'Пловдив',
         answer: 4,
-        img: "https://discoverbulgaria.online/img/grebna_baza.jpg"
+        img: "https://deyanvnikolov.github.io/discoverbulgaria/img/grebna_baza.jpg"
     },
 ]
 
